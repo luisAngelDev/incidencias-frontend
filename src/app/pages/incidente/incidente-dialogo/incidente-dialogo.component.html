@@ -1,0 +1,91 @@
+<div>
+
+    <!-- <mat-form-field class="example-container">
+        <input matInput [matDatepicker]="picker" placeholder="Escoger una fecha dd/mm/yyyy" 
+        [max]="maxFecha" [(ngModel)]="fecha_reporteSeleccionada">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+
+    <mat-form-field>
+        <input matInput placeholder="Reportado por" [(ngModel)]="reportado_porSeleccionado">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Tipo" [(ngModel)]="tipo_incidenteSeleccionado">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Descripcion" [(ngModel)]="descripcionSeleccionado">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Prioridad" [(ngModel)]="prioridadSeleccionado">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Estado" [(ngModel)]="estadoSeleccionado">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Responsable" [(ngModel)]="responsableSeleccionado">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Acciones" [(ngModel)]="acciones_realizadasSeleccionado">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Resultado" [(ngModel)]="resultadoSeleccionado">
+    </mat-form-field>
+    
+    <!-- <mat-form-field>
+        <input matInput placeholder="Fecha" [(ngModel)]="egreso.fecha">
+    </mat-form-field> -->
+
+    <!-- <mat-form-field class="example-container">
+        <input matInput [matDatepicker]="picker" placeholder="Escoger una fecha dd/mm/yyyy" 
+        [max]="maxFecha" [(ngModel)]="fechaSeleccionada">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+
+    <!-- <div>
+        <mat-form-field>
+            <mat-select placeholder="escoge categoria pago" [(ngModel)]="idCategoriaSeleccionada" >
+                <mat-option *ngFor="let c of categorias" [value]="c.idCategoria" >
+                    {{c.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field >
+            <mat-select placeholder="escoge metodo pago" [(ngModel)]="idMetodopagoSeleccionada" >
+                <mat-option *ngFor="let m of metodopagos" [value]="m.idMetodopago">
+                    {{m.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div> -->
+
+    <!-- <mat-form-field>
+        <input matInput placeholder="categoria" [(ngModel)]="egreso.categoria.nombre">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="metodopago" [(ngModel)]="egreso.metodopago.nombre">
+    </mat-form-field> -->
+
+</div>
+<!-- <div>
+    <mat-slide-toggle color="primary"
+    [checked]="isChecked"
+    (change)="onToggleChange($event)">
+    solucionado
+    </mat-slide-toggle>
+</div>
+ -->
+<button mat-raised-button color="primary" (click)="operar()">Aceptar</button>
+<button mat-raised-button color="accent" (click)="cerrar()">Cancelar</button>

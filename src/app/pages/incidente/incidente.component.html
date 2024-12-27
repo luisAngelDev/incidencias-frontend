@@ -1,0 +1,94 @@
+
+<div class="example-container mat-elevation-z8">
+
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar Incidente">
+      </mat-form-field>
+    </div>
+  
+    <mat-table [dataSource]="dataSource" matSort>
+  
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="fecha_reporte">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha reporte </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.fecha_reporte | date:'dd-MM-yyyy'}} </mat-cell>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="reportado_por">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Reportado por </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.reportado_por}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="tipo_incidente">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.tipo_incidente}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="descripcion">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.descripcion}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="prioridad">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Prioridad</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.prioridad}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="estado">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Estado</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.estado}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="responsable">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Responsable</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.responsable}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="fecha_solucion">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Solucion </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.fecha_solucion | date:'dd-MM-yyyy'}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones_realizadas">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.acciones_realizadas}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="resultado">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Resultado </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.resultado}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="revisado_por">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Revisado Por </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.revisado_por}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="opciones">
+        <mat-header-cell *matHeaderCellDef>Opciones</mat-header-cell>
+        <mat-cell *matCellDef="let element">        
+          <button mat-button color="primary" (click)="abrirDialogo(element)" ><mat-icon>ballot</mat-icon></button>
+          <button mat-button color="accent" (click)="eliminar(element)"><mat-icon>delete</mat-icon></button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+  
+  <br>
+  
+  <button mat-fab color="accent" (click)="abrirDialogo()" style="float: right; margin-right: 20px">
+    <mat-icon>add</mat-icon>
+  </button>
